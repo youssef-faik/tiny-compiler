@@ -22,5 +22,15 @@ public class Main {
         for (ASTNode node : ast) {
             System.out.println(node);
         }
+
+        // Step 3: Semantic Analysis
+        System.out.println("\nPerforming Semantic Analysis...");
+        try {
+            SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer();
+            semanticAnalyzer.analyze(ast);
+            System.out.println("Semantic Analysis Passed ✅");
+        } catch (RuntimeException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
