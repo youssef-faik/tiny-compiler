@@ -29,6 +29,11 @@ public class Main {
             SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer();
             semanticAnalyzer.analyze(ast);
             System.out.println("Semantic Analysis Passed ✅");
+
+            // Step 4: Running the Interpreter
+            System.out.println("\nExecuting Program...");
+            Interpreter interpreter = new Interpreter();
+            interpreter.execute(ast);
         } catch (RuntimeException e) {
             System.err.println(e.getMessage());
         }
